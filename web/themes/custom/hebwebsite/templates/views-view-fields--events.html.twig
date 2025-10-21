@@ -1,0 +1,23 @@
+{# views-view-fields--events.html.twig #}
+<div class="event-card">
+  {% if fields.field_event_image %}
+    <div class="event-image">
+      {{ fields.field_event_image.content }}
+    </div>
+  {% endif %}
+  <div class="event-details">
+    <h3 class="event-title">{{ fields.title.content }}</h3>
+    {% if fields.field_venue %}
+      <div class="event-venue">
+        <span class="material-icons">place</span>
+        {{ fields.field_venue.content }}
+      </div>
+    {% endif %}
+    {% if fields.field_date %}
+      <div class="event-date">
+        <span class="material-icons">event</span>
+        {{ fields.field_date.content }}
+      </div>
+    {% endif %}
+  </div>
+</div>

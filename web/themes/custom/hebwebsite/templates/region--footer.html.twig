@@ -1,0 +1,71 @@
+{# region--footer.html.twig #}
+{% set classes = [
+  'site-footer',
+  'region',
+  'region-' ~ region|clean_class,
+] %}
+
+<footer{{ attributes.addClass(classes) }}>
+  <div class="footer-wrapper">
+    <div class="footer-branding">
+      {% if theme_settings.logo_path %}
+        <img src="{{ theme_settings.logo_path }}" alt="{{ 'Hindu Endowments Board'|t }}" class="footer-logo">
+      {% endif %}
+      
+      {# Social Media Links #}
+      <div class="social-media-links">
+        {% if theme_settings.social_media.facebook %}
+          <a href="{{ theme_settings.social_media.facebook }}" class="social-link">
+            <img src="{{ theme_settings.social_media_icons.facebook }}" alt="Facebook">
+          </a>
+        {% endif %}
+        {% if theme_settings.social_media.instagram %}
+          <a href="{{ theme_settings.social_media.instagram }}" class="social-link">
+            <img src="{{ theme_settings.social_media_icons.instagram }}" alt="Instagram">
+          </a>
+        {% endif %}
+        {% if theme_settings.social_media.tiktok %}
+          <a href="{{ theme_settings.social_media.tiktok }}" class="social-link">
+            <img src="{{ theme_settings.social_media_icons.tiktok }}" alt="TikTok">
+          </a>
+        {% endif %}
+        {% if theme_settings.social_media.youtube %}
+          <a href="{{ theme_settings.social_media.youtube }}" class="social-link">
+            <img src="{{ theme_settings.social_media_icons.youtube }}" alt="YouTube">
+          </a>
+        {% endif %}
+        {% if theme_settings.social_media.whatsapp %}
+          <a href="{{ theme_settings.social_media.whatsapp }}" class="social-link">
+            <img src="{{ theme_settings.social_media_icons.whatsapp }}" alt="WhatsApp">
+          </a>
+        {% endif %}
+        {% if theme_settings.social_media.telegram %}
+          <a href="{{ theme_settings.social_media.telegram }}" class="social-link">
+            <img src="{{ theme_settings.social_media_icons.telegram }}" alt="Telegram">
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="footer-content">
+      {% if content.footer_menu %}
+        {# Get the menu tree from the footer menu #}
+        {% set menu_tree = content.footer_menu['#items'] %}
+        {% for key, item in menu_tree if item.is_expanded %}
+          <div class="footer-section">
+            <h2>{{ item.title }}</h2>
+            {% if item.below %}
+              <ul class="footer-menu">
+                {% for child_key, child in item.below %}
+                  <li>
+                    <a href="{{ child.url }}"{{ child.attributes }}>{{ child.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</footer>

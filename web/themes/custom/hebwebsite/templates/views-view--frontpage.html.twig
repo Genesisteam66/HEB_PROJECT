@@ -1,0 +1,213 @@
+{# views-view--frontpage.html.twig #}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+
+  {# Hero Section with Background Video/Image #}
+  <section class="hero-section mdc-elevation--z3">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <div class="hero-text-container mdc-elevation--z2">
+        <h1 class="hero-title mdc-typography--headline1">{{ 'Maintaining High Spiritual Standards &'|t }}</h1>
+        <h2 class="hero-subtitle mdc-typography--headline4">{{ 'Caring for the welfare of the Hindu Community'|t }}</h2>
+        <div class="hero-cta">
+          <a href="/about" class="mdc-button mdc-button--raised">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">{{ 'Learn More'|t }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Quick Links Section #}
+  <section class="quick-links-section">
+    <div class="quick-links-grid">
+      <div class="quick-link-card mdc-card">
+        <div class="mdc-card__primary-action">
+          <div class="quick-link-icon">
+            <i class="material-icons">event</i>
+          </div>
+          <h3 class="mdc-typography--headline6">{{ 'Temple Events'|t }}</h3>
+          <p class="mdc-typography--body2">{{ 'View upcoming events and festivals'|t }}</p>
+        </div>
+        <div class="mdc-card__actions">
+          <a href="/events" class="mdc-button mdc-card__action mdc-card__action--button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">{{ 'View Calendar'|t }}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="quick-link-card mdc-card">
+        <div class="mdc-card__primary-action">
+          <div class="quick-link-icon">
+            <i class="material-icons">school</i>
+          </div>
+          <h3 class="mdc-typography--headline6">{{ 'Education'|t }}</h3>
+          <p class="mdc-typography--body2">{{ 'Learn about our educational programs'|t }}</p>
+        </div>
+        <div class="mdc-card__actions">
+          <a href="/education" class="mdc-button mdc-card__action mdc-card__action--button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">{{ 'Learn More'|t }}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="quick-link-card mdc-card">
+        <div class="mdc-card__primary-action">
+          <div class="quick-link-icon">
+            <i class="material-icons">volunteer_activism</i>
+          </div>
+          <h3 class="mdc-typography--headline6">{{ 'Get Involved'|t }}</h3>
+          <p class="mdc-typography--body2">{{ 'Join our community activities'|t }}</p>
+        </div>
+        <div class="mdc-card__actions">
+          <a href="/volunteer" class="mdc-button mdc-card__action mdc-card__action--button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">{{ 'Join Us'|t }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Featured Events Section #}
+  <section class="events-section mdc-elevation--z2">
+    <div class="section-header">
+      <h2 class="section-title mdc-typography--headline3">{{ 'Mark Your Calendar'|t }}</h2>
+      <p class="section-subtitle mdc-typography--subtitle1">{{ 'Join us for these upcoming events'|t }}</p>
+    </div>
+    <div class="events-grid">
+      {% if rows %}
+        {{ rows }}
+      {% endif %}
+    </div>
+    <div class="view-all">
+      <a href="/events" class="mdc-button">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">{{ 'View All Events'|t }}</span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">arrow_forward</i>
+      </a>
+    </div>
+  </section>
+
+  {# Bursary Section with Card Design #}
+  <section class="bursary-section mdc-elevation--z2">
+    <div class="bursary-card mdc-card">
+      <div class="bursary-content">
+        <h2 class="mdc-typography--headline3">{{ 'Sivadas-HEB Bursary'|t }}</h2>
+        <p class="mdc-typography--body1">{{ 'Supporting the educational aspirations of our community members'|t }}</p>
+        <div class="bursary-actions">
+          <a href="/bursary" class="mdc-button mdc-button--raised">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">{{ 'Applications are now open'|t }}</span>
+          </a>
+          <a href="/bursary/guidelines" class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">{{ 'Learn More'|t }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Community Updates Section #}
+  <section class="community-updates-section">
+    <div class="section-header">
+      <h2 class="section-title mdc-typography--headline3">{{ 'Community Updates'|t }}</h2>
+      <p class="section-subtitle mdc-typography--subtitle1">{{ 'Stay connected with the latest news and announcements'|t }}</p>
+    </div>
+    <div class="updates-grid mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+          <div class="update-card mdc-card">
+            <div class="mdc-card__primary-action">
+              <div class="update-content">
+                <h3 class="mdc-typography--headline6">{{ 'Newsletter'|t }}</h3>
+                <p class="mdc-typography--body2">{{ 'Subscribe to our monthly newsletter'|t }}</p>
+              </div>
+            </div>
+            <div class="mdc-card__actions">
+              <a href="/newsletter" class="mdc-button mdc-card__action mdc-card__action--button">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">{{ 'Subscribe'|t }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+          <div class="update-card mdc-card">
+            <div class="mdc-card__primary-action">
+              <div class="update-content">
+                <h3 class="mdc-typography--headline6">{{ 'Temple Hours'|t }}</h3>
+                <p class="mdc-typography--body2">{{ 'View temple opening hours and services'|t }}</p>
+              </div>
+            </div>
+            <div class="mdc-card__actions">
+              <a href="/hours" class="mdc-button mdc-card__action mdc-card__action--button">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">{{ 'View Hours'|t }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+          <div class="update-card mdc-card">
+            <div class="mdc-card__primary-action">
+              <div class="update-content">
+                <h3 class="mdc-typography--headline6">{{ 'Contact Us'|t }}</h3>
+                <p class="mdc-typography--body2">{{ 'Get in touch with our team'|t }}</p>
+              </div>
+            </div>
+            <div class="mdc-card__actions">
+              <a href="/contact" class="mdc-button mdc-card__action mdc-card__action--button">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">{{ 'Contact'|t }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="info-section">
+    <h2 class="section-title">{{ 'Want to learn more?'|t }}</h2>
+    <div class="info-grid">
+      <div class="info-block">
+        <img src="{{ vidyapeedham_image }}" alt="Vidyapeedham">
+        <h3>{{ 'Vidyapeedham'|t }}</h3>
+        <p>{{ vidyapeedham_description }}</p>
+      </div>
+      <div class="info-block">
+        <img src="{{ temple_etiquette_image }}" alt="Temple Etiquette">
+        <h3>{{ 'Temple Etiquette'|t }}</h3>
+        <p>{{ temple_etiquette_description }}</p>
+      </div>
+      <div class="info-block">
+        <img src="{{ auspicious_dates_image }}" alt="Auspicious Dates">
+        <h3>{{ 'Auspicious Dates'|t }}</h3>
+        <p>{{ auspicious_dates_description }}</p>
+      </div>
+      <div class="info-block">
+        <img src="{{ ubayam_book_image }}" alt="Ubayam Book">
+        <h3>{{ 'Ubayam Book 2025/26'|t }}</h3>
+        <p>{{ ubayam_book_description }}</p>
+      </div>
+    </div>
+  </section>
+</div>

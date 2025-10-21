@@ -1,0 +1,85 @@
+.dropdown-menu--temples,
+.dropdown-menu--festivals {
+  position: static;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.menu-item--expanded:hover > .dropdown-menu--temples,
+.menu-item--expanded:hover > .dropdown-menu--festivals {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu--temples .menu-item,
+.dropdown-menu--festivals .menu-item {
+  padding: 0;
+}
+
+.dropdown-menu--temples a,
+.dropdown-menu--festivals a {
+  padding: 0.75rem 1rem;
+  color: var(--mdc-theme-secondary);
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.dropdown-menu--temples a:hover,
+.dropdown-menu--festivals a:hover {
+  background-color: rgba(203, 110, 23, 0.05);
+}
+
+/* Mobile menu button */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .menu--main .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--header-bg-color);
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .menu--main .menu.is-active {
+    display: flex;
+  }
+
+  .menu--main .menu-item {
+    width: 100%;
+  }
+
+  .menu--main .menu-item a {
+    padding: 1rem 2rem;
+  }
+
+  .menu--main .menu-item--expanded > .menu {
+    position: static;
+    background: rgba(255,255,255,0.05);
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .button--reach-out {
+    margin: 1rem 2rem;
+    display: inline-block;
+  }
+}

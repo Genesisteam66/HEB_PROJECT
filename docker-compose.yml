@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  drupal:
+    image: hebwebsite:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - drupal_modules:/opt/drupal/web/modules
+      - drupal_profiles:/opt/drupal/web/profiles
+      - drupal_sites:/opt/drupal/web/sites
+      - ./web/themes/custom/hebwebsite:/opt/drupal/web/themes/custom/hebwebsite
+    environment:
+      POSTGRES_HOST: database
+      POSTGRES_DB: drupal
+      POSTGRES_USER: drupal
+      POSTGRES_PASSWORD: drupal_pass
+    depends_on:
+      - database
+
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: drupal
+      POSTGRES_USER: drupal
+      POSTGRES_PASSWORD: drupal_pass
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  drupal_modules:
+  drupal_profiles:
+  drupal_sites:
+  db_data:

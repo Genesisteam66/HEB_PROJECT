@@ -1,0 +1,165 @@
+/* Override Claro theme variables */
+:root {
+  --color-absolutezero: #CB6E17;  /* Primary color override */
+  --color-maximumblue: #CB6E17;   /* Secondary color override */
+  --color-bgblue-active: #B15A0D; /* Active state color */
+  --color-focus: #CB6E17;         /* Focus state color */
+  
+  /* Toolbar colors */
+  --color-toolbaritem: #1a1a1a;   /* Dark background for toolbar */
+  --color-whitesmoke: #f5f5f5;    /* Light background for content */
+  
+  /* Typography */
+  --font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Toolbar overrides */
+.toolbar-bar {
+  background-color: var(--color-toolbaritem) !important;
+}
+
+.toolbar-item, 
+.toolbar-menu-administration .toolbar-box a {
+  color: #ffffff !important;
+}
+
+.toolbar-item:hover, 
+.toolbar-menu-administration .toolbar-box a:hover {
+  color: var(--color-absolutezero) !important;
+}
+
+/* Button overrides */
+.button--primary {
+  background-color: var(--color-absolutezero);
+  border-color: var(--color-absolutezero);
+}
+
+.button--primary:hover,
+.button--primary:focus {
+  background-color: var(--color-bgblue-active);
+  border-color: var(--color-bgblue-active);
+}
+
+/* Menu overrides */
+.menu-item--expanded > .menu {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item--expanded > .menu a {
+  color: var(--color-toolbaritem);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.menu-item--expanded > .menu a:hover {
+  background-color: rgba(203, 110, 23, 0.05);
+  color: var(--color-absolutezero);
+}
+
+/* Main navigation */
+.region-primary-menu {
+  background-color: var(--color-toolbaritem);
+  padding: 0;
+}
+
+.region-primary-menu .menu--main {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.region-primary-menu .menu--main .menu {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.region-primary-menu .menu--main .menu-item {
+  padding: 0;
+  margin: 0;
+}
+
+.region-primary-menu .menu--main .menu-item a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.region-primary-menu .menu--main .menu-item a:hover {
+  color: var(--color-absolutezero);
+}
+
+/* Reach Out button */
+.button--reach-out {
+  display: inline-block;
+  background-color: var(--color-absolutezero);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.button--reach-out:hover {
+  background-color: var(--color-bgblue-active);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Dropdown menus */
+.menu--temples,
+.menu--festivals {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 100;
+}
+
+.menu-item--expanded:hover > .menu--temples,
+.menu-item--expanded:hover > .menu--festivals {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 768px) {
+  .region-primary-menu .menu--main .menu {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .menu--temples,
+  .menu--festivals {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .menu-item--expanded > .menu a {
+    padding-left: 2rem;
+  }
+}

@@ -1,0 +1,33 @@
+material-ui:
+  version: 4.x
+  css:
+    theme:
+      https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap: { type: external }
+      https://fonts.googleapis.com/icon?family=Material+Icons: { type: external }
+      https://unpkg.com/@material/menu-surface/dist/mdc.menuSurface.css: { type: external, minified: true }
+      https://unpkg.com/@material/menu/dist/mdc.menu.css: { type: external, minified: true }
+      https://unpkg.com/@material/list/dist/mdc.list.css: { type: external, minified: true }
+      css/material.css: {}
+  js:
+    https://unpkg.com/@material/menu-surface/dist/mdc.menuSurface.js: { type: external, minified: true }
+    https://unpkg.com/@material/menu/dist/mdc.menu.js: { type: external, minified: true }
+    https://unpkg.com/@material/list/dist/mdc.list.js: { type: external, minified: true }
+    https://unpkg.com/@material/drawer@11.0.0/dist/mdc.drawer.min.js: { type: external, minified: true }
+    https://unpkg.com/@material/top-app-bar@11.0.0/dist/mdc.topAppBar.min.js: { type: external, minified: true }
+    js/material-init.js: {}
+
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/style.css: {}
+      css/menu.css: {}
+      css/footer.css: {}
+      css/homepage.css: {}
+      css/claro-override.css: { weight: 100 }
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - hebwebsite/material-ui

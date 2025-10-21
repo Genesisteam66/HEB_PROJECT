@@ -1,0 +1,51 @@
+hebwebsite.settings:
+  type: theme_settings
+  label: 'HEB Website Theme Settings'
+  mapping:
+    logo_path:
+      type: string
+      label: 'Logo Path'
+    social_media:
+      type: mapping
+      label: 'Social Media Links'
+      mapping:
+        facebook:
+          type: string
+          label: 'Facebook URL'
+        instagram:
+          type: string
+          label: 'Instagram URL'
+        tiktok:
+          type: string
+          label: 'TikTok URL'
+        youtube:
+          type: string
+          label: 'YouTube URL'
+        whatsapp:
+          type: string
+          label: 'WhatsApp URL'
+        telegram:
+          type: string
+          label: 'Telegram URL'
+    social_media_icons:
+      type: mapping
+      label: 'Social Media Icons'
+      mapping:
+        facebook:
+          type: string
+          label: 'Facebook Icon Path'
+        instagram:
+          type: string
+          label: 'Instagram Icon Path'
+        tiktok:
+          type: string
+          label: 'TikTok Icon Path'
+        youtube:
+          type: string
+          label: 'YouTube Icon Path'
+        whatsapp:
+          type: string
+          label: 'WhatsApp Icon Path'
+        telegram:
+          type: string
+          label: 'Telegram Icon Path'

@@ -1,0 +1,21 @@
+name: Hindu Temple Website
+type: theme
+description: 'A custom theme for Hindu Temple website with Material Design'
+core_version_requirement: ^9 || ^10
+base theme: claro
+
+libraries:
+  - hebwebsite/global-styling
+  - hebwebsite/material-ui
+
+regions:
+  header: Header
+  primary_menu: 'Primary Menu'
+  secondary_menu: 'Secondary Menu'
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'First Sidebar'
+  footer_first: 'Footer First'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer Third'

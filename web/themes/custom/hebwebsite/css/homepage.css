@@ -1,0 +1,305 @@
+/* Homepage styles */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  background-color: var(--mdc-theme-surface);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/temple-background.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-text-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero-title {
+  color: var(--mdc-theme-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  color: var(--mdc-theme-secondary);
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+/* Quick Links Section */
+.quick-links-section {
+  padding: 4rem 2rem;
+  background-color: var(--mdc-theme-surface);
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quick-link-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.quick-link-icon {
+  font-size: 3rem;
+  color: var(--mdc-theme-primary);
+  margin-bottom: 1rem;
+}
+
+.quick-link-card h3 {
+  margin-bottom: 1rem;
+}
+
+/* Events Section */
+.events-section {
+  padding: 4rem 2rem;
+  background-color: var(--mdc-theme-background);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  color: var(--mdc-theme-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--mdc-theme-text-secondary-on-background);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--mdc-theme-on-surface);
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--mdc-theme-on-surface);
+  opacity: 0.9;
+}
+
+/* Events Section */
+.events-section {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--mdc-theme-on-surface);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-details {
+  padding: 1.5rem;
+}
+
+.event-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--mdc-theme-on-surface);
+}
+
+.event-venue,
+.event-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-link {
+  color: var(--mdc-theme-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Bursary Section */
+.bursary-section {
+  background-color: var(--mdc-theme-primary);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.bursary-content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bursary-button .button {
+  display: inline-block;
+  background-color: white;
+  color: var(--mdc-theme-primary);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.bursary-button .button:hover {
+  background-color: rgba(255,255,255,0.9);
+}
+
+/* Information Blocks */
+.info-section {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-block {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-block:hover {
+  transform: translateY(-5px);
+}
+
+.info-block img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+}
+
+.info-block h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--mdc-theme-on-surface);
+}
+
+.info-block p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+}

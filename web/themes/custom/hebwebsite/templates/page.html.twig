@@ -1,0 +1,178 @@
+{# page.html.twig #}
+<div class="layout-container">
+  {# Mobile Drawer #}
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        {% if page.primary_menu %}
+          {{ page.primary_menu }}
+        {% endif %}
+      </nav>
+    </div>
+  </aside>
+  <div class="mdc-drawer-scrim"></div>
+
+  {# Header #}
+  <header class="site-header mdc-top-app-bar" role="banner">
+    <div class="mdc-top-app-bar__row">
+      <div class="header-inner">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button class="menu-toggle material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+          {% if page.header %}
+            {{ page.header }}
+          {% endif %}
+        </section>
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+          {# For Devotees Menu #}
+          <div class="menu-container">
+            <button class="menu-button mdc-button" aria-haspopup="true">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">FOR DEVOTEES</span>
+              <i class="material-icons">arrow_drop_down</i>
+            </button>
+            <div class="mdc-menu mdc-menu-surface" role="menu">
+              <ul class="mdc-list">
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Tamil</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Sri Mariamman Temple</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Sri Srinivasa Perumal Temple</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Sri Sivan Temple</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Sri Vairavimada Kaliamman Temple</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Gita Jayanti</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {# For Community Menu #}
+          <div class="menu-container">
+            <button class="menu-button mdc-button" aria-haspopup="true">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">FOR COMMUNITY</span>
+              <i class="material-icons">arrow_drop_down</i>
+            </button>
+            <div class="mdc-menu mdc-menu-surface" role="menu">
+              <ul class="mdc-list">
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Thaipusam</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Maha Sivarathiri</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Fire Walking Festival</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Navarakshi</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {# Other Navigation Items #}
+          <button class="menu-button mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">NEXT GEN</span>
+          </button>
+          
+          <button class="menu-button mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">HINDU LAB</span>
+          </button>
+          
+          <button class="menu-button mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">OUR STORY</span>
+          </button>
+
+          {# Reach Out Button #}
+          <button class="reach-out-button mdc-button mdc-button--raised">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">REACH OUT TO US</span>
+          </button>
+
+          {# Language Selector #}
+          <div class="language-selector">
+            <button class="lang-button mdc-button" aria-haspopup="true">
+              <i class="material-icons">language</i>
+              <i class="material-icons">arrow_drop_down</i>
+            </button>
+            <div class="mdc-menu mdc-menu-surface" role="menu">
+              <ul class="mdc-list">
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">English</span>
+                </li>
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">தமிழ்</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </header>
+
+  {# Main content #}
+  <div class="mdc-top-app-bar--fixed-adjust">
+    {% if page.highlighted %}
+      <div class="highlighted">
+        <div class="container">
+          {{ page.highlighted }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.breadcrumb %}
+      <div class="breadcrumb mdc-elevation--z1">
+        <div class="container">
+          {{ page.breadcrumb }}
+        </div>
+      </div>
+    {% endif %}
+
+    <main role="main">
+      <div class="container">
+        {{ page.content }}
+      </div>
+    </main>
+
+    {# Footer #}
+    {% if page.footer_first or page.footer_second or page.footer_third %}
+      <footer role="contentinfo" class="site-footer">
+        <div class="container">
+          <div class="footer-grid">
+            {% if page.footer_first %}
+              <div class="footer-first">
+                {{ page.footer_first }}
+              </div>
+            {% endif %}
+
+            {% if page.footer_second %}
+              <div class="footer-second">
+                {{ page.footer_second }}
+              </div>
+            {% endif %}
+
+            {% if page.footer_third %}
+              <div class="footer-third">
+                {{ page.footer_third }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </footer>
+    {% endif %}
+  </div>
+</div>
