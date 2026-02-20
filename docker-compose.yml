@@ -19,7 +19,7 @@ services:
       - database
 
   database:
-    image: postgres:latest
+    image: postgres:16
     environment:
       POSTGRES_DB: drupal
       POSTGRES_USER: drupal
